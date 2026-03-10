@@ -1,0 +1,179 @@
+import Foundation
+
+extension AchievementDefinitions {
+    // MARK: - Secret (Hidden)
+
+    static let secret: [AchievementDefinition] = [
+        AchievementDefinition(
+            id: "secret_inception",
+            title: String(localized: "Inception", comment: "Achievement title: travel through Bir-Hakeim on Line 6"),
+            description: String(
+                localized: "Travel through Bir-Hakeim station on Line 6",
+                comment: "Achievement description: travel through Bir-Hakeim on Line 6"
+            ),
+            group: .secret,
+            systemImage: "film",
+            xpReward: 150,
+            isHidden: true
+        ) { ctx in
+            ctx.firstBirHakeimLine6Date
+        },
+        AchievementDefinition(
+            id: "secret_grand_paris",
+            title: String(localized: "Greater Paris", comment: "Achievement title: visit all 8 IDF departments"),
+            description: String(
+                localized: "Visit at least one station in each Île-de-France department",
+                comment: "Achievement description: visit all 8 IDF departments"
+            ),
+            group: .secret,
+            systemImage: "map.circle",
+            xpReward: 1000,
+            isHidden: true
+        ) { ctx in
+            ctx.allDepartmentsCoveredDate
+        },
+        AchievementDefinition(
+            id: "secret_fantome_opera",
+            title: String(localized: "The Phantom of the Opera", comment: "Achievement title: travel at Opéra between 11 PM and 3 AM"),
+            description: String(
+                localized: "Travel at Opéra station between 11 PM and 3 AM",
+                comment: "Achievement description: travel at Opéra between 11 PM and 3 AM"
+            ),
+            group: .secret,
+            systemImage: "theatermasks",
+            xpReward: 200,
+            isHidden: true
+        ) { ctx in
+            ctx.firstOperaNightTravelDate
+        },
+        AchievementDefinition(
+            id: "secret_survivant_13",
+            title: String(localized: "Line 13 Survivor", comment: "Achievement title: travel on Line 13 during rush hour"),
+            description: String(
+                localized: "Travel on Line 13 between 8 AM and 9 AM",
+                comment: "Achievement description: travel on Line 13 during rush hour"
+            ),
+            group: .secret,
+            systemImage: "person.3.fill",
+            xpReward: 200,
+            isHidden: true
+        ) { ctx in
+            ctx.firstLine13RushHourDate
+        },
+        AchievementDefinition(
+            id: "secret_fou_du_bus",
+            title: String(localized: "Bus Fanatic", comment: "Achievement title: discover 50 bus lines"),
+            description: String(
+                localized: "Discover 50 bus lines",
+                comment: "Achievement description: discover 50 bus lines"
+            ),
+            group: .secret,
+            systemImage: "bus.fill",
+            xpReward: 1000,
+            isHidden: true
+        ) { ctx in
+            ctx.nthUniqueBusLineDates.count >= 50 ? ctx.nthUniqueBusLineDates[49] : nil
+        },
+        AchievementDefinition(
+            id: "secret_mordor_rerc",
+            title: String(
+                localized: "One does not simply...",
+                comment: "Achievement title: complete the RER C line (Lord of the Rings reference)"
+            ),
+            description: String(
+                localized: "...complete the RER C",
+                comment: "Achievement description: complete the RER C line"
+            ),
+            group: .secret,
+            systemImage: "mountain.2",
+            xpReward: 500,
+            isHidden: true
+        ) { ctx in
+            ctx.rerCCompletionDate
+        },
+        AchievementDefinition(
+            id: "secret_over_9000",
+            title: String(localized: "It's over 9000!", comment: "Achievement title: visit over 9000 stops (Dragon Ball Z reference)"),
+            description: String(
+                localized: "Visit over 9,000 stops",
+                comment: "Achievement description: visit over 9000 stops"
+            ),
+            group: .secret,
+            systemImage: "bolt.fill",
+            xpReward: 1500,
+            isHidden: true
+        ) { ctx in
+            ctx.nthUniqueStationDates.count > 9000 ? ctx.nthUniqueStationDates[9000] : nil
+        },
+        AchievementDefinition(
+            id: "secret_winter_is_coming",
+            title: String(
+                localized: "Winter is Coming",
+                comment: "Achievement title: record a travel in December or January (Game of Thrones reference)"
+            ),
+            description: String(
+                localized: "Record a travel in December or January",
+                comment: "Achievement description: record a travel in December or January"
+            ),
+            group: .secret,
+            systemImage: "snowflake",
+            xpReward: 50,
+            isHidden: true
+        ) { ctx in
+            let cal = Calendar.current
+            for date in ctx.sortedTravelDates {
+                let month = cal.component(.month, from: date)
+                if month == 12 || month == 1 { return date }
+            }
+            return nil
+        },
+        AchievementDefinition(
+            id: "secret_red_keep",
+            title: String(localized: "The Red Keep", comment: "Achievement title: visit Château Rouge station (Game of Thrones reference)"),
+            description: String(
+                localized: "Visit Château Rouge station",
+                comment: "Achievement description: visit Château Rouge station"
+            ),
+            group: .secret,
+            systemImage: "building.columns.fill",
+            xpReward: 50,
+            isHidden: true
+        ) { ctx in
+            ctx.firstChateauRougeDate
+        },
+        AchievementDefinition(
+            id: "secret_metro_boulot_dodo",
+            title: String(
+                localized: "The Daily Grind",
+                comment: "Achievement title: travel the same route 10 times"
+            ),
+            description: String(
+                localized: "Travel the same route 10 times",
+                comment: "Achievement description: travel the same from→to route 10 times"
+            ),
+            group: .secret,
+            systemImage: "arrow.triangle.2.circlepath",
+            xpReward: 150,
+            isHidden: true
+        ) { ctx in
+            ctx.firstSameRouteTenTimesDate
+        },
+        AchievementDefinition(
+            id: "secret_full_circle",
+            title: String(
+                localized: "The Full Circle",
+                comment: "Achievement title: travel on both T3a and T3b tram lines"
+            ),
+            description: String(
+                localized: "Travel on Tram T3a and T3b",
+                comment: "Achievement description: travel on both halves of the ring tram"
+            ),
+            group: .secret,
+            systemImage: "circle.dotted",
+            xpReward: 200,
+            isHidden: true
+        ) { ctx in
+            ctx.firstT3aAndT3bDate
+        },
+    ]
+}
