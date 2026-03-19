@@ -28,7 +28,14 @@ platform :ios do
     project = File.join(project_root, "metropolist.xcodeproj")
     derived_data = File.join(project_root, "build")
 
-    runtime = "com.apple.CoreSimulator.SimRuntime.iOS-26-2"
+    # Find the latest iOS simulator runtime dynamically
+    all_runtimes = JSON.parse(`xcrun simctl list runtimes -j`)["runtimes"]
+    ios_runtimes = all_runtimes
+      .select { |r| r["name"].start_with?("iOS") && r["isAvailable"] }
+      .sort_by { |r| r["version"].split(".").map(&:to_i) }
+    UI.user_error!("No available iOS simulator runtime found") if ios_runtimes.empty?
+    runtime = ios_runtimes.last["identifier"]
+    UI.message("Using runtime: #{runtime}")
     cache_screenshots = File.expand_path("~/Library/Caches/tools.fastlane/screenshots")
     concurrency = 2
 
